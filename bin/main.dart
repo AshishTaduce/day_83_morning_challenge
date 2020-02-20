@@ -34,18 +34,21 @@ bool checkIfSameNode(Node a,Node b){
 
 void test1(){
   Node a = Node(3);
-  Node b = Node(99);
-  Node c = Node(7);
-  Node d = Node(8);
-  Node e = Node(10);
-  Node f = Node(1);
+  Node b = Node(9);
+  Node c = Node(1);
+  Node d = Node(5);
+  Node e = Node(2);
+  Node f = Node(4);
   Node g = Node(8);
+  Node h = Node(10);
+
   a.next = e;
-//  c.next = d;
-  b.next = f;
+  c.next = d;
+  b.next = e;
+  e.next = f;
+  d.next = g;
   f.next = g;
-  d.next = e;
-  g.next = e;
+  g.next = h;
 //  printTree(a);
 print(findInterSect(a, b));
 }
@@ -57,18 +60,17 @@ void printTree(Node current){
   }
 }
 
-int findInterSect(Node a, Node b){
-  Node temp = b;
-  while(a != null){
-    b = temp;
-    while(b != null){
-//      print("${a.val}-a ${b.val}=b ");
-      if(a.val == b.val){
-        return a.val;
+int findInterSect(Node x, Node y){
+  Node temp = y;
+  while(x != null){
+    y = temp;
+    while(y != null){
+      if(x.val == y.val){
+        return x.val;
       }
-      b = b.next;
+      y = y.next;
     }
-    a = a.next;
+    x = x.next;
   }
   return null;
 }
