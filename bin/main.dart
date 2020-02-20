@@ -40,13 +40,13 @@ void test1(){
   Node e = Node(10);
   Node f = Node(1);
   Node g = Node(8);
-  a.next = c;
-  c.next = d;
+  a.next = e;
+//  c.next = d;
   b.next = f;
   f.next = g;
   d.next = e;
   g.next = e;
-  printTree(a);
+//  printTree(a);
 print(findInterSect(a, b));
 }
 
